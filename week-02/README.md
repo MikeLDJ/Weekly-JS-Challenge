@@ -5,9 +5,7 @@ Generated on 2016-07-26 using
 
 ## Description
 
-#Weekly JS Challenge - Week 02
-
-https://www.facebook.com/events/1091460824257459/?active_tab=highlights
+Site on Facebook: [Weekly JavaScript Challenge - week 02 event](https://www.facebook.com/events/1091460824257459/?active_tab=highlights)
 
 ***
 
