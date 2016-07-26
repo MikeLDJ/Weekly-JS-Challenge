@@ -1,0 +1,13 @@
+{
+  "generator-yeogurt": {
+    "config": {
+      "projectName": "Weekly JS Challenge - week 02",
+      "htmlOption": "jade",
+      "jsPreprocessor": "none",
+      "cssOption": "sass",
+      "sassSyntax": "scss",
+      "testFramework": "none"
+    },
+    "version": "1.5.3"
+  }
+}
