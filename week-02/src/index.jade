@@ -1,15 +1,66 @@
 extends _layouts/base
 
-include _modules/link/link
+//- include _modules/link/link
+
+//- block content
+//-   .container
+//-     .yeogurt-info
+//-       h1 Welcome to Yeogurt!
+//-       p.
+//-         Take a look at the
+//-         #[+link({text: 'documentation'})(href='https://github.com/larsonjj/generator-yeogurt#yeogurt-generator---')]
+//-         and start mixing up something awesome.
+//-       p
+//-         img.logo(src="images/yeogurt-swirl.png", width="75px")
+//-   code.version v1.5.3
 
 block content
   .container
-    .yeogurt-info
-      h1 Welcome to Yeogurt!
-      p.
-        Take a look at the
-        #[+link({text: 'documentation'})(href='https://github.com/larsonjj/generator-yeogurt#yeogurt-generator---')]
-        and start mixing up something awesome.
-      p
-        img.logo(src="images/yeogurt-swirl.png", width="75px")
-  code.version v1.5.3
+    .info-box
+      h2 
+        a(href='https://www.facebook.com/events/1091460824257459/?active_tab=highlights') Weekly JavaScript Challenge - Week 2
+    .challenge-title
+      h1 Length Conversion
+    .input-length
+      input(type='text', placeholder='enter length')
+      form
+        input(type='radio', name='len-in', value='in-milimeters')
+        | Milimeters
+        input(type='radio', name='len-in', value='in-centimeters')
+        | Centimeters
+        input(type='radio', name='len-in', value='in-decimeters')
+        | Decimeters
+        input(type='radio', name='len-in', value='in-meters')
+        | Meters
+        input(type='radio', name='len-in', value='in-kilometers')
+        | Kilometers
+        input(type='radio', name='len-in', value='in-inches')
+        | Inches
+        input(type='radio', name='len-in', value='in-feet')
+        | Feet
+        input(type='radio', name='len-in', value='in-yards')
+        | Yards
+        input(type='radio', name='len-in', value='in-miles')
+        | Miles
+    .output-length
+      .result result
+      form
+        input(type='radio', name='out-milimeters', checked)
+        | Milimeters
+        input(type='radio', name='out-centimeters')
+        | Centimeters
+        input(type='radio', name='out-decimeters')
+        | Decimeters
+        input(type='radio', name='out-meters')
+        | Meters
+        input(type='radio', name='out-kilometers')
+        | Kilometers
+        input(type='radio', name='out-inches')
+        | Inches
+        input(type='radio', name='out-feet')
+        | Feet
+        input(type='radio', name='out-yards')
+        | Yards
+        input(type='radio', name='out-miles')
+        | Miles
+      
