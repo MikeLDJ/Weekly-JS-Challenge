@@ -1,21 +1,11 @@
 // link styles
 
-// unvisited link
-a:link {
-    color: #ff0000;
+a:link, a:visited, a:hover, a:active {
+    color: $color-font;
 }
 
-// visited link
-a:visited {
-    color: #00ff00;
-}
-
-// mouse over link
-a:hover {
-    color: #ff00ff;
-}
-
-// selected link
-a:active {
-    color: #0000ff;
+footer {
+    a:link, a:visited, a:hover, a:active {
+        color: $color-graphics;
+    }
 }

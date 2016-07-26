@@ -1,66 +1,88 @@
 extends _layouts/base
 
-//- include _modules/link/link
-
-//- block content
-//-   .container
-//-     .yeogurt-info
-//-       h1 Welcome to Yeogurt!
-//-       p.
-//-         Take a look at the
-//-         #[+link({text: 'documentation'})(href='https://github.com/larsonjj/generator-yeogurt#yeogurt-generator---')]
-//-         and start mixing up something awesome.
-//-       p
-//-         img.logo(src="images/yeogurt-swirl.png", width="75px")
-//-   code.version v1.5.3
+include _modules/link/link
 
 block content
-  .container
+  .info-container
     .info-box
-      h2 
-        a(href='https://www.facebook.com/events/1091460824257459/?active_tab=highlights') Weekly JavaScript Challenge - Week 2
-    .challenge-title
+      h2
+        a(href='https://www.facebook.com/events/1091460824257459/?active_tab=highlights') Weekly JavaScript Challenge
+          br
+          | Week 2
+      hr
       h1 Length Conversion
+  hr
+  .challenge-container
     .input-length
-      input(type='text', placeholder='enter length')
+      .value
+        input(type='text', class='input-value', placeholder='enter length')
       form
-        input(type='radio', name='len-in', value='in-milimeters')
-        | Milimeters
-        input(type='radio', name='len-in', value='in-centimeters')
-        | Centimeters
-        input(type='radio', name='len-in', value='in-decimeters')
-        | Decimeters
-        input(type='radio', name='len-in', value='in-meters')
-        | Meters
-        input(type='radio', name='len-in', value='in-kilometers')
-        | Kilometers
-        input(type='radio', name='len-in', value='in-inches')
-        | Inches
-        input(type='radio', name='len-in', value='in-feet')
-        | Feet
-        input(type='radio', name='len-in', value='in-yards')
-        | Yards
-        input(type='radio', name='len-in', value='in-miles')
-        | Miles
+        table
+          tr
+            td
+              input(type='radio', name='len-in', value='some', id='in-milimeters', checked)
+              label(for='in-milimeters') Milimeters
+            td
+              input(type='radio', name='len-in', value='some', id='in-centimeters')
+              label(for='in-centimeters') Centimeters
+            td
+              input(type='radio', name='len-in', value='some', id='in-decimeters')
+              label(for='in-decimeters') Decimeters
+          tr
+            td
+              input(type='radio', name='len-in', value='some', id='in-meters')
+              label(for='in-meters') Meters
+            td
+              input(type='radio', name='len-in', value='some', id='in-kilometers')
+              label(for='in-kilometers') Kilometers
+            td
+              input(type='radio', name='len-in', value='some', id='in-inches')
+              label(for='in-inches') Inches
+          tr
+            td
+              input(type='radio', name='len-in', value='some', id='in-feet')
+              label(for='in-feet') Feet
+            td
+              input(type='radio', name='len-in', value='some', id='in-yards')
+              label(for='in-yards') Yards
+            td
+              input(type='radio', name='len-in', value='some', id='in-miles')
+              label(for='in-miles') Miles
+            td
     .output-length
       .result result
       form
-        input(type='radio', name='out-milimeters', checked)
-        | Milimeters
-        input(type='radio', name='out-centimeters')
-        | Centimeters
-        input(type='radio', name='out-decimeters')
-        | Decimeters
-        input(type='radio', name='out-meters')
-        | Meters
-        input(type='radio', name='out-kilometers')
-        | Kilometers
-        input(type='radio', name='out-inches')
-        | Inches
-        input(type='radio', name='out-feet')
-        | Feet
-        input(type='radio', name='out-yards')
-        | Yards
-        input(type='radio', name='out-miles')
-        | Miles
-      
+        table
+          tr
+            td
+              input(type='radio', name='len-out', value='some', id='out-milimeters', checked)
+              label(for='out-milimeters') Milimeters
+            td
+              input(type='radio', name='len-out', value='some', id='out-centimeters')
+              label(for='out-centimeters') Centimeters
+            td
+              input(type='radio', name='len-out', value='some', id='out-decimeters')
+              label(for='out-decimeters') Decimeters
+          tr
+            td
+              input(type='radio', name='len-out', value='some', id='out-meters')
+              label(for='out-meters') Meters
+            td
+              input(type='radio', name='len-out', value='some', id='out-kilometers')
+              label(for='out-kilometers') Kilometers
+            td
+              input(type='radio', name='len-out', value='some', id='out-inches')
+              label(for='out-inches') Inches
+          tr
+            td
+              input(type='radio', name='len-out', value='some', id='out-feet')
+              label(for='out-feet') Feet
+            td
+              input(type='radio', name='len-out', value='some', id='out-yards')
+              label(for='out-yards') Yards
+            td
+              input(type='radio', name='len-out', value='some', id='out-miles')
+              label(for='out-miles') Miles
+  footer
+    a(href='https://github.com/MikeLDJ') &copy 2016 MikeLDJ
+        

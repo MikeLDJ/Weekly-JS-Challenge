@@ -2,37 +2,8 @@
 @import 'node_modules/normalize.css/normalize';
 
 // Import Modules
-// @import '../_modules/link/link';
 @import '../_modules/color/color';
-
-// Box sizing partial styles:
-// Apply a natural box layout model to all elements
-// *,
-// *:before,
-// *:after {
-//   -moz-box-sizing: border-box;
-//   -webkit-box-sizing: border-box;
-//   box-sizing: border-box;
-// }
-//
-// .yeogurt-info {
-//   text-align: center;
-//   max-width: 500px;
-//   margin-left: auto;
-//   margin-right: auto;
-// }
-//
-// .version {
-//   font-size: 14px;
-//   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-//   position: absolute;
-//   bottom: 10px;
-//   right: 10px;
-// }
-//
-// .logo {
-//   margin-top: 15px;
-// }
+@import '../_modules/link/link';
 
 // Styling on warning for users on IE7 or below
 .browsehappy {
@@ -46,7 +17,134 @@
 // Custom
 
 body {
+  font-family: Verdana, sans-serif;
   color: $color-font;
   background-color: $color-bg;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+}
 
+h1, h2 {
+  text-align: center;
+}
+
+hr {
+  width: 90%;
+  border-color: $color-graphics;
+}
+
+a {
+  text-decoration: none;
+}
+
+.challenge-container {
+  display: flex;
+  align-self: center;
+  width: 90%;
+}
+
+.input-length {
+  margin-right: 0.5em;
+}
+.output-length {
+  margin-left: 0.5em;
+}
+
+.input-length, .output-length {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.input-value {
+  background-color: $color-bg;
+  border: none;
+  text-align: center;
+  width: 98%;
+}
+
+:focus {
+  outline: none;
+  background: $color-sec-font;
+}
+
+.value, .result,  {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border: 1px solid $color-graphics;
+  font-size: 2em;
+  height: 2.4em;
+  padding-top: 1em;
+  text-align: center;
+}
+
+input[type=radio] {
+  display: none;
+  &:checked + label{
+    color: $color-font;
+  }
+}
+
+label {
+  color: lighten($color-sec-font, 20%);
+  padding: 0.4em;
+  margin: 10em 0.2em 1em 0.2em;
+}
+
+table {
+  width: 90%;
+  height: 120px;
+  text-align: center;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer {
+  font-size: 0.8em;
+  color: $color-graphics;
+  text-align: center;
+  margin-top: 10em;
+}
+
+@media (max-width: 850px) {
+  table {
+    letter-spacing: -1px;
+  }
+}
+@media (max-width: 740px) {
+  body {
+    padding: 0 1em 0 1em;
+  }
+  h1 {
+    font-size: 1.4em;
+  }
+  h2 {
+    font-size: 1.2em;
+  }
+  .challenge-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .input-length {
+    margin-right: 0em;
+  }
+  .output-length {
+    margin-left: 0em;
+  }
+  .value, .result,  {
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+    font-size: 1.4em;
+    height: 1.8em;
+    padding-top: 0.4em;
+  }
+  form, table, tr, td {
+    margin: 0;
+  }
+  label {
+    font-size: 0.8em;
+  }
 }
