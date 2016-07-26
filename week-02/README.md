@@ -9,7 +9,7 @@ Site on Facebook: [Weekly JavaScript Challenge - week 02 event](https://www.face
 
 ***
 
-Szczegółowe informacje
+# Szczegółowe informacje:
 Drugie zadanie to głównie praca ze zdarzeniami. Tego typu problemy są właściwie codziennością w pracy front-endowców przy tworzeniu stron internetowych i prostych aplikacji.
 
 # Zadanie:
