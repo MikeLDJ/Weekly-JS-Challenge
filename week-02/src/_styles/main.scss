@@ -5,6 +5,14 @@
 @import '../_modules/color/color';
 @import '../_modules/link/link';
 
+// Mixins
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
+
 // Styling on warning for users on IE7 or below
 .browsehappy {
   text-align: center;
@@ -44,6 +52,10 @@ a {
   width: 90%;
 }
 
+@include placeholder {
+  color: lighten($color-sec-font, 30%);
+}
+
 .input-length {
   margin-right: 0.5em;
 }
@@ -59,6 +71,7 @@ a {
 }
 
 .input-value {
+  color: $color-font;
   background-color: $color-bg;
   border: none;
   text-align: center;
@@ -67,7 +80,7 @@ a {
 
 :focus {
   outline: none;
-  background: $color-sec-font;
+  background: lighten($color-bg, 10%);
 }
 
 .value, .result,  {
