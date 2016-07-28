@@ -1,0 +1,11 @@
+// link styles
+
+a:link, a:visited, a:hover, a:active {
+    color: $color-font;
+}
+
+footer {
+    a:link, a:visited, a:hover, a:active {
+        color: $color-graphics;
+    }
+}
