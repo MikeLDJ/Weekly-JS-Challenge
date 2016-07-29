@@ -13,6 +13,20 @@
   :-ms-input-placeholder      {@content}
 }
 
+@mixin animatedRadio {
+  -webkit-transition: background-color 0.2s linear;
+  -o-transition: background-color 0.2s linear;
+  -moz-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+}
+
+@mixin slowGlow {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+}
+
 // Styling on warning for users on IE7 or below
 .browsehappy {
   text-align: center;
@@ -46,12 +60,6 @@ a {
   text-decoration: none;
 }
 
-.challenge-container {
-  display: flex;
-  align-self: center;
-  width: 90%;
-}
-
 footer {
   font-size: 0.8em;
   color: $color-graphics;
@@ -69,10 +77,115 @@ footer {
   h2 {
     font-size: 1.2em;
   }
-  .challenge-container {
+}
+
+// Custom Challenge Container
+
+.challenge-container {
+  display: flex;
+  align-self: center;
+}
+
+fieldset {
+  border: 1px solid $color-graphics;
+  border-radius: 10px;
+  padding: 1em;
+}
+
+form {
+  @extend fieldset;
+  width: 30em;
+}
+
+h3, p {
+  text-align: center;
+}
+
+.note, legend {
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  li {
+    flex-direction: row;
+    margin: auto;
+  }
+}
+
+input[type="radio"] {
+  display:none;
+  + label span {
+    display:inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    margin: 0 10px 2px 0;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: $color-sec-font;
+    @include animatedRadio
+  }
+  &:checked + label span {
+    background-color: $color-graphics;
+  }
+}
+
+
+.customer-person,
+.customer-company {
+  display: flex;
+  flex-direction: column;
+  span {
+    margin: 0.5em;
+  }
+  label {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+input {
+  background-color: $color-sec-font;
+  border: 0;
+  width: 16em;
+  padding: 0 0.4em 0 0.4em;
+  margin: 0.2em;
+  height: 2em;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+:focus {
+  outline: none;
+  box-shadow: 0 0 15px $color-graphics;
+}
+
+@media (max-width: 740px) {
+  fieldset {
+    font-size: 0.9em;
+  }
+  form {
+    width: auto;
+  }
+  .update-info {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 460px) {
+  label {
     display: flex;
     flex-direction: column;
   }
 }
-
-// Custom Challenge Container

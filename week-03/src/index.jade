@@ -15,89 +15,91 @@ block content
   .challenge-container
   
     form
-      h3 Payment form
-      p Note: All Fields Are Required
+      h3 Payment Form
+      hr
       section
-        h4 Contact information
+        p.note Note: All Fields Are Required
         fieldset
           legend Title
           .customer-title
             ul
               li
+                input(type="radio" id="titleMs" name="title" value="Mrs.")
                 label(for="titleMs")
-                  input(type="radio" id="titleMs" name="title" value="Ms.")
+                  span
                   | Miss
               li
+                input(type="radio" id="titleM" name="title" value="Mr." )
                 label(for="titleM")
-                  input(type="radio" id="titleM" name="title" value="M.")
+                  span
                   | Mister
               li
+                input(type="radio" id="titleCompany" name="title" value="Company")
                 label(for="titleCompany")
-                  input(type="radio" id="titleCompany" name="title" value="Company")
+                  span
                   | Company
         fieldset
           legend Address
           .customer-person
-            p
-              label(for="firstname")
-                span First Name:
-                input(type="text" id="firstname" name="firstname")
-              label(for="lastname")
-                span Last Name:
-                input(type="text" id="lastname" name="lastname")
-            p
-              label(for="street")
-                span Street:
-                input(type="text" id="street" name="street")
-            p
-              label(for="postal")
-                span Postal Code:
-                input(type="text" id="postal" name="postal")
-              label(for="city")
-                span City:
-                input(type="text" id="city" name="city")
+            label(for="firstname")
+              span First Name:
+              input(type="text" id="firstname" name="firstname")
+            label(for="lastname")
+              span Last Name:
+              input(type="text" id="lastname" name="lastname")
+            label(for="street")
+              span Street:
+              input(type="text" id="street" name="street")
+            label(for="postal")
+              span Postal Code:
+              input(type="text" id="postal" name="postal")
+            label(for="city")
+              span City:
+              input(type="text" id="city" name="city")
           .customer-company
-            p
-              label(for="company")
-                span Company Name:
-                input(type="text" id="company" name="company")
-              label(for="vatId")
-                span VAT ID:
-                input(type="text" id="vatId" name="vatId")
-            p
-              label(for="street")
-                span Street:
-                input(type="text" id="street" name="street")
-            p
-              label(for="postal")
-                span Postal Code:
-                input(type="text" id="postal" name="postal")
-              label(for="city")
-                span City:
-                input(type="text" id="city" name="city")
+            label(for="company")
+              span Company Name:
+              input(type="text" id="company" name="company")
+            label(for="vatId")
+              span VAT ID:
+              input(type="text" id="vatId" name="vatId")
+            label(for="street")
+              span Street:
+              input(type="text" id="street" name="street")
+            label(for="postal")
+              span Postal Code:
+              input(type="text" id="postal" name="postal")
+            label(for="city")
+              span City:
+              input(type="text" id="city" name="city")
         fieldset
           legend Invoice
           .invoice-state
             p
               label(for="amount")
                 span Amount:
-                input(type="text" id="amount" name="amount")
+                input(type="number" id="amount" name="amount")
             ul
               li
+                input(type="radio" id="invoicePrinted" name="title" value="invoicePrinted")
                 label(for="invoicePrinted")
-                  input(type="radio" id="invoicePrinted" name="title" value="invoicePrinted")
+                  span
                   | Invoice Printed
               li
+                input(type="radio" id="invoicePaid" name="title" value="invoicePaid")
                 label(for="invoicePaid")
-                  input(type="radio" id="invoicePaid" name="title" value="invoicePaid")
+                  span
                   | Invoice Paid
+            ul
               li
+                input(type="radio" id="invoiceLate" name="title" value="invoiceLate")
                 label(for="invoiceLate")
-                  input(type="radio" id="invoiceLate" name="title" value="invoiceLate")
+                  span
                   | Invoice Late
               li
+                input(type="radio" id="invoiceDelivered" name="title" value="invoiceDelivered")
                 label(for="invoiceDelivered")
-                  input(type="radio" id="invoiceDelivered" name="title" value="invoiceDelivered")
+                  span
                   | Invoice Delivered
       .update-info
         p Last Updated On: 
