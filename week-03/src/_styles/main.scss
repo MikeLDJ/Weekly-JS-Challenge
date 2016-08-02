@@ -138,7 +138,8 @@ input[type="radio"] {
 
 
 .customer-person,
-.customer-company {
+.customer-company,
+.customer-address {
   display: flex;
   flex-direction: column;
   span {

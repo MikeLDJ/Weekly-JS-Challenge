@@ -24,15 +24,10 @@ block content
           .customer-title
             ul
               li
-                input(type="radio" id="titleMs" name="title" value="Mrs.")
-                label(for="titleMs")
+                input(type="radio" id="titlePerson" name="title" value="Person" checked)
+                label(for="titlePerson")
                   span
-                  | Miss
-              li
-                input(type="radio" id="titleM" name="title" value="Mr." )
-                label(for="titleM")
-                  span
-                  | Mister
+                  | Person
               li
                 input(type="radio" id="titleCompany" name="title" value="Company")
                 label(for="titleCompany")
@@ -43,35 +38,27 @@ block content
           .customer-person
             label(for="firstname")
               span First Name:
-              input(type="text" id="firstname" name="firstname")
+              input(type="text" id="pfirstname" name="firstname")
             label(for="lastname")
               span Last Name:
-              input(type="text" id="lastname" name="lastname")
-            label(for="street")
-              span Street:
-              input(type="text" id="street" name="street")
-            label(for="postal")
-              span Postal Code:
-              input(type="text" id="postal" name="postal")
-            label(for="city")
-              span City:
-              input(type="text" id="city" name="city")
+              input(type="text" id="plastname" name="lastname")
           .customer-company
             label(for="company")
-              span Company Name:
-              input(type="text" id="company" name="company")
+              span Company:
+              input(type="text" id="ccompany" name="company")
             label(for="vatId")
               span VAT ID:
-              input(type="text" id="vatId" name="vatId")
+              input(type="text" id="cvatId" name="vatId")
+          .customer-address
             label(for="street")
               span Street:
-              input(type="text" id="street" name="street")
+              input(type="text" id="cstreet" name="street")
             label(for="postal")
               span Postal Code:
-              input(type="text" id="postal" name="postal")
+              input(type="text" id="cpostal" name="postal")
             label(for="city")
               span City:
-              input(type="text" id="city" name="city")
+              input(type="text" id="ccity" name="city")
         fieldset
           legend Invoice
           .invoice-state
@@ -81,27 +68,28 @@ block content
                 input(type="number" id="amount" name="amount")
             ul
               li
-                input(type="radio" id="invoicePrinted" name="title" value="invoicePrinted")
+                input(type="radio" id="invoicePrinted" name="invoice" value="invoicePrinted")
                 label(for="invoicePrinted")
                   span
                   | Invoice Printed
               li
-                input(type="radio" id="invoicePaid" name="title" value="invoicePaid")
+                input(type="radio" id="invoicePaid" name="invoice" value="invoicePaid")
                 label(for="invoicePaid")
                   span
                   | Invoice Paid
             ul
               li
-                input(type="radio" id="invoiceLate" name="title" value="invoiceLate")
+                input(type="radio" id="invoiceLate" name="invoice" value="invoiceLate")
                 label(for="invoiceLate")
                   span
                   | Invoice Late
               li
-                input(type="radio" id="invoiceDelivered" name="title" value="invoiceDelivered")
+                input(type="radio" id="invoiceDelivered" name="invoice" value="invoiceDelivered")
                 label(for="invoiceDelivered")
                   span
                   | Invoice Delivered
       .update-info
+        p This Form is Auto-Saved
         p Last Updated On: 
           span#lastUpdated Never Updated
   
