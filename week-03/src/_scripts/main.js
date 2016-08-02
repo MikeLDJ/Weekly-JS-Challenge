@@ -1,27 +1,22 @@
 var eventListener = document.querySelector('.challenge-container');
 var updateInfo = document.querySelector('#lastUpdated');
-var date = new Date().toLocaleString('pl-PL');
-var pfirstname = document.getElementById('pfirstname').value;
-var plastname = document.getElementById('plastname').value;
-var ccompany = document.getElementById('ccompany').value;
-var cvatId = document.getElementById('cvatId').value;
-var cstreet = document.getElementById('cstreet').value;
-var cpostal = document.getElementById('cpostal').value;
-var ccity = document.getElementById('ccity').value;
-var amount = document.getElementById('amount').value;
-var titlePerson = document.getElementById('titlePerson').value;
-var titleCompany = document.getElementById('titleCompany').value;
-var invoicePrinted = document.getElementById('invoicePrinted').value;
-var invoicePaid = document.getElementById('invoicePaid').value;
-var invoiceLate = document.getElementById('invoiceLate').value;
-var invoiceDelivered = document.getElementById('invoiceDelivered').value;
+var formArray = [ "date", "pfirstname", "plastname", "ccompany", "cvatId", "cstreet", "cpostal", "ccity", "amount", "titlePerson", "titleCompany", "invoicePrinted", "invoicePaid", "invoiceLate", "invoiceDelivered"];
 
-eventListener.addEventListener('click', saveForm);
-eventListener.addEventListener('keyup', saveForm);
+eventListener.addEventListener('click', formApp);
+eventListener.addEventListener('keyup', formApp);
 
-function saveForm() {
+function formApp() {
+  fillForm();
   hideUnnecessaryFormFields();
   storeData();
+}
+
+function fillForm() {
+  for (var formField in formArray) {
+    if (localStorage.getItem(formField) !== "") {
+      formField.textContent = localStorage.getItem(formField).value;
+    }
+  }
 }
 
 function hideUnnecessaryFormFields() {
@@ -35,39 +30,16 @@ function hideUnnecessaryFormFields() {
 }
 
 function storeData() {
-  localStorage.setItem("updateDate", date);
-  localStorage.setItem("pfirstname", pfirstname);
-  localStorage.setItem("plastname", plastname);
-  localStorage.setItem("ccompany", ccompany);
-  localStorage.setItem("cvatId", cvatId);
-  localStorage.setItem("cstreet", cstreet);
-  localStorage.setItem("cpostal", cpostal);
-  localStorage.setItem("ccity", ccity);
-  localStorage.setItem("amount", amount);
-  localStorage.setItem("titlePerson", titlePerson);
-  localStorage.setItem("titleCompany", titleCompany);
-  localStorage.setItem("invoicePrinted", invoicePrinted);
-  localStorage.setItem("invoicePaid", invoicePaid);
-  localStorage.setItem("invoiceLate", invoiceLate);
-  localStorage.setItem("invoiceDelivered", invoiceDelivered);
+  for (var formField in formArray) {
+    if (document.getElementById(formField).value !== "") {
+      localStorage.setItem(formField, document.getElementById(formField).value);
+      date = new Date().toLocaleString('pl-PL');
+    }
+  }
 }
 
 if (typeof(Storage) != 'undefined') {
-    updateInfo.textContent = localStorage.getItem('updateDate');
-    pfirstname.textContent = localStorage.getItem("pfirstname");
-    plastname.textContent = localStorage.getItem("plastname");
-    ccompany.textContent = localStorage.getItem("ccompany");
-    cvatId.textContent = localStorage.getItem("cvatId");
-    cstreet.textContent = localStorage.getItem("cstreet");
-    cpostal.textContent = localStorage.getItem("cpostal");
-    ccity.textContent = localStorage.getItem("ccity");
-    amount.textContent = localStorage.getItem("amount");
-    titlePerson.textContent = localStorage.getItem("titlePerson");
-    titleCompany.textContent = localStorage.getItem("titleCompany");
-    invoicePrinted.textContent = localStorage.getItem("invoicePrinted");
-    invoicePaid.textContent = localStorage.getItem("invoicePaid");
-    invoiceLate.textContent = localStorage.getItem("invoiceLate");
-    invoiceDelivered.textContent = localStorage.getItem("invoiceDelivered");
+  updateInfo.textContent = localStorage.getItem('updateDate');
 } else {
-    updateInfo.textContent = 'Sorry! No Web Storage support.';
+  updateInfo.textContent = 'Sorry! No Web Storage support.';
 }
