@@ -1,4 +1,4 @@
-var eventListener = document.querySelector('.challenge-container');
+var eventListener = document.querySelector('form');
 var textForm = document.querySelectorAll('input[type="text"]');
 var numberForm = document.querySelector('input[type="number"]');
 var titleRadio = document.querySelectorAll('input[name="title"]');
@@ -8,8 +8,7 @@ var date;
 retrieveData();
 hideUnnecessaryFormFields();
 
-eventListener.addEventListener('click', formApp);
-eventListener.addEventListener('keyup', formApp);
+eventListener.addEventListener('change', formApp);
 
 function formApp() {
   hideUnnecessaryFormFields();
@@ -74,36 +73,38 @@ function storeData() {
   saveRadioInput();
 }
 
+function isRadioInput(o) {
+  if (o !== null && o.type === 'radio') {
+    return true;
+  }
+  return false;
+}
+
+function isTextInput(t) {
+  if (t !== null && (t.type === 'text' || 'number')) {
+    return true;
+  }
+  return false;
+}
+
 function retrieveData() {
   if (typeof(Storage) != 'undefined') {
-    document.getElementById('pfirstname').value = localStorage.getItem("pfirstname");
-    document.getElementById('plastname').value = localStorage.getItem("plastname");
-    document.getElementById('ccompany').value = localStorage.getItem("ccompany");
-    document.getElementById('cvatId').value = localStorage.getItem("cvatId");
-    document.getElementById('cstreet').value = localStorage.getItem("cstreet");
-    document.getElementById('cpostal').value = localStorage.getItem("cpostal");
-    document.getElementById('ccity').value = localStorage.getItem("ccity");
-    document.getElementById('amount').value = localStorage.getItem("amount");
-    if (localStorage.getItem('titleMark') === 'titlePerson') {
-      document.getElementById('titlePerson').checked = true;
-    } else {
-      document.getElementById('titleCompany').checked = true;
-    }
-    switch (localStorage.getItem('invoiceMark')) {
-      case 'invoicePrinted':
-        document.getElementById('invoicePrinted').checked = true;
-        break;
-      case 'invoicePaid':
-        document.getElementById('invoicePaid').checked = true;
-        break;
-      case 'invoiceLate':
-        document.getElementById('invoiceLate').checked = true;
-        break;
-      default:
-        document.getElementById('invoiceDelivered').checked = true;
+    var element;
+    var elementRadio;
+    for (var fieldName in localStorage) {
+      element = document.getElementById(fieldName);
+      elementRadio = document.getElementById(localStorage[fieldName]);
+      if (localStorage[fieldName] !== "" && fieldName !== "undefined") {
+        if (isTextInput(element)) {
+          element.value = localStorage.getItem(fieldName);
+        } else if (isRadioInput(elementRadio)) {
+          elementRadio.checked = true;
+        }
+      }
     }
     showLastUpdate();
   } else {
+    document.querySelector('#autoSaveInfo').textContent = 'Your browser does not support Auto-Save option.';
     document.querySelector('#lastUpdated').textContent = 'Sorry! No Web Storage support.';
   }
 }

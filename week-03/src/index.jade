@@ -38,27 +38,27 @@ block content
           .customer-person
             label(for="firstname")
               span First Name:
-              input(type="text" id="pfirstname" name="firstname")
+              input(type="text" id="firstname" name="firstname")
             label(for="lastname")
               span Last Name:
-              input(type="text" id="plastname" name="lastname")
+              input(type="text" id="lastname" name="lastname")
           .customer-company
             label(for="company")
               span Company:
-              input(type="text" id="ccompany" name="company")
+              input(type="text" id="company" name="company")
             label(for="vatId")
               span VAT ID:
-              input(type="text" id="cvatId" name="vatId")
+              input(type="text" id="vatId" name="vatId")
           .customer-address
             label(for="street")
               span Street:
-              input(type="text" id="cstreet" name="street")
+              input(type="text" id="street" name="street")
             label(for="postal")
               span Postal Code:
-              input(type="text" id="cpostal" name="postal")
+              input(type="text" id="postal" name="postal")
             label(for="city")
               span City:
-              input(type="text" id="ccity" name="city")
+              input(type="text" id="city" name="city")
         fieldset
           legend Invoice
           .invoice-state
@@ -89,7 +89,7 @@ block content
                   span
                   | Invoice Delivered
       .update-info
-        p This Form is Auto-Saved
+        p#autoSaveInfo This Form is Auto-Saved
         p Last Updated On: 
           span#lastUpdated Never Updated
   
@@ -97,4 +97,3 @@ block content
   .footer
     footer
       a(href='https://github.com/MikeLDJ') &copy 2016 MikeLDJ
-        
