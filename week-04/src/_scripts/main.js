@@ -1,12 +1,13 @@
-// Main javascript entry point
-// Should handle bootstrapping/starting application
+var window = document.querySelector('form');
 
-'use strict';
+window.addEventListener('keyup', app);
 
-var $ = require('jquery');
-var Link = require('../_modules/link/link');
+function app() {
+  console.log('app is working');
+}
 
-$(function() {
-  new Link(); // Activate Link modules logic
-  console.log('Welcome to Yeogurt!');
-});
+function isJavaScriptEnabled() {
+  document.getElementById('searchState').textContent = 'waiting for input...';
+}
+
+isJavaScriptEnabled();
