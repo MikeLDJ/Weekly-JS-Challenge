@@ -47,9 +47,24 @@ a {
 }
 
 .challenge-container {
-  display: flex;
-  align-self: center;
-  width: 90%;
+  text-align: center;
+  form {
+    padding: 2em;
+    input {
+      margin: 1em;
+      border-radius: 6px;
+      color: $color-font;
+      background-color: lighten($color-bg, 10%);
+      border: none;
+      text-align: center;
+      padding: 0.5em;
+      min-width: 20em;
+    }
+    :focus {
+      outline: none;
+      box-shadow: 0 0 15px $color-graphics;
+    }
+  }
 }
 
 footer {

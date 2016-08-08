@@ -10,9 +10,17 @@ block content
           br
           | Week 4
       hr
-      h1 REST API Search Engine to Giphy.com
+      h1 Giphy.com Search Engine
   hr
   .challenge-container
-
+    .search-container
+      form
+        h3 Search Giphy:
+        input(type="search" id="searchField" name="giphysearch")
+    .result-container
+      h3#searchState Please enable JavaScript to search Giphy.com
+    
   footer
+    p 
+      a(href='http://giphy.com') Powered By Giphy
     a(href='https://github.com/MikeLDJ') &copy 2016 MikeLDJ

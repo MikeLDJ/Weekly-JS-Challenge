@@ -5,7 +5,7 @@ Generated on 2016-08-08 using
 
 ## Description
 
-Site on Facebook: [Weekly JavaScript Challenge - week 03 event](https://www.facebook.com/events/1062498357132335/?active_tab=highlights)
+Site on Facebook: [Weekly JavaScript Challenge - week 04 event](https://www.facebook.com/events/1062498357132335/?active_tab=highlights)
 
 ***
 
