@@ -50,6 +50,9 @@ a {
   text-align: center;
   form {
     padding: 2em;
+    h3 {
+      text-transform: uppercase;
+    }
     input {
       margin: 1em;
       border-radius: 6px;
@@ -71,7 +74,11 @@ footer {
   font-size: 0.8em;
   color: $color-graphics;
   text-align: center;
-  margin-top: 10em;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+  img {
+    max-width: 18em;
+  }
 }
 
 @media (max-width: 740px) {
@@ -87,7 +94,18 @@ footer {
   .challenge-container {
     display: flex;
     flex-direction: column;
+    form {
+      padding: .1em;
+      input {
+        margin: .1em;
+        border-radius: 6px;
+        color: $color-font;
+        background-color: lighten($color-bg, 10%);
+        border: none;
+        text-align: center;
+        padding: 0.2em;
+        min-width: 98%;
+      }
+    }
   }
 }
-
-// Custom Challenge Container
