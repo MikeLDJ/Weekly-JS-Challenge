@@ -37,10 +37,9 @@ function getSearchText() {
 }
 
 function videoElement(data) {
-  var video = '';
-  var videoBox = document.createElement('video');
+  var video = document.createElement('video');
   video.src = data;
-  return videoBox;
+  return video;
 }
 
 function searchGiphy() {
@@ -50,24 +49,20 @@ function searchGiphy() {
   })
   .then(function(o) {
     var videoPath = o.data[0].images.original.mp4;
-
-    console.log(o.data.length);
-    console.log(videoPath);
-    console.log(typeof (videoElement(videoPath)));
-
-    /* todo
-    - append video
-    - loop json
-    */
-
-
-
-    document.getElementById('searchState').textContent = "result:";
-    document.getElementById('searchState').appendChild(videoElement(videoPath));
+    document.getElementById('searchState').textContent = "Results:";
+    for (var i in o.data) {
+      videoPath = o.data[i].images.original.mp4;
+      document.getElementById('searchState').appendChild(videoElement(videoPath));
+    }
   })
   .catch(function(error){
     document.getElementById('searchState').textContent = error;
   });
 }
+
+/* todo
+- play videos on mouse hover
+- style videos
+*/
 
 isJavaScriptEnabled();
